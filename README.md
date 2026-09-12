@@ -5,7 +5,7 @@ A red terminal animation for the wait between jobs.
 Run in an interactive PowerShell window:
 
 ```powershell
-irm https://raw.githubusercontent.com/projectverticaluk/interlude/main/run.ps1 | iex
+irm https://raw.githubusercontent.com/projectverticaluk/interlude/refs/heads/main/run.ps1 | iex
 ```
 
 This downloads and runs the readable script in this repository. It draws the Maz repair character and streams the Star Wars ASCIIMATION from `towel.blinkenlights.nl:23`. It does not perform PC repairs, install software, require administrator access, or add anything to startup.
