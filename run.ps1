@@ -69,7 +69,7 @@ $steps = @(
     @{ Name='repair'; N=3; From=@(0,1); To=@(0,1); Face=1; Label='Top-left corner: nearly perfect.' }
     @{ Name='walk'; N=3; From=@(0,1); To=@(0,21); Face=1; Label='Another inspection lap.' }
 )
-$cycleLength = [double](($steps | Measure-Object N -Sum).Sum)
+$cycleLength = [double](($steps | ForEach-Object { $_.N } | Measure-Object -Sum).Sum)
 $script:partCycle = -1
 $script:parts = @()
 
