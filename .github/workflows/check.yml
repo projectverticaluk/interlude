@@ -5,12 +5,15 @@ permissions:
 jobs:
   powershell:
     runs-on: windows-latest
-    strategy:
-      matrix:
-        shell: [powershell, pwsh]
     steps:
-      - name: Check the published script in memory
-        shell: ${{ matrix.shell }}
+      - name: Check Windows PowerShell 5.1
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $source = Invoke-RestMethod "https://raw.githubusercontent.com/$env:GITHUB_REPOSITORY/$env:GITHUB_SHA/run.ps1"
+          & ([scriptblock]::Create($source)) -SelfTest
+      - name: Check PowerShell 7
+        shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
           $source = Invoke-RestMethod "https://raw.githubusercontent.com/$env:GITHUB_REPOSITORY/$env:GITHUB_SHA/run.ps1"
