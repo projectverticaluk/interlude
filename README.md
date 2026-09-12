@@ -5,10 +5,10 @@ A red terminal animation for the wait between jobs.
 Run in an interactive PowerShell window:
 
 ```powershell
-irm https://raw.githubusercontent.com/projectverticaluk/interlude/refs/heads/main/run.ps1 | iex
+irm https://raw.githubusercontent.com/projectverticaluk/interlude/v1/run.ps1 | iex
 ```
 
-This downloads and runs the readable script in this repository. It draws the Maz repair character and streams the Star Wars ASCIIMATION from `towel.blinkenlights.nl:23`. It does not perform PC repairs, install software, require administrator access, or add anything to startup.
+This downloads and runs the readable script from the `v1` release tag. It draws the Maz repair character and streams the Star Wars ASCIIMATION from `towel.blinkenlights.nl:23`. It does not perform PC repairs, install software, require administrator access, or add anything to startup.
 
 The Maz title stays visible while the movie connects, followed by the five-second invitation and the received film. The terminal requests at least 129 columns by 45 rows; enlarge it manually if the host blocks resizing. Outbound TCP port 23 must be available for the movie.
 
